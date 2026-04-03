@@ -7,15 +7,15 @@ const morgan = require('morgan');
 
 const app = express();
 
-// ✅ CORS Configuration - Fixed for Vercel Frontend
-const corsOptions = {
-  origin: process.env.CLIENT_URL || 'https://heartyourcity-bm66tqg04-perhapslaksh-5241s-projects.vercel.app/',
-  credentials: true
-};
+app.use(cors({
+  origin: 'https://heartyourcity-kpyh995xh-perhapslaksh-5241s-projects.vercel.app',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200
+}));
 
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));
-
+app.options('*', cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
