@@ -9,7 +9,7 @@ const app = express();
 
 // ✅ CORS Configuration - Fixed for Vercel Frontend
 const corsOptions = {
-  origin: process.env.CLIENT_URL || 'https://heartyourcity-bm66tqg04-perhapslaksh-5241s-projects.vercel.app',
+  origin: process.env.CLIENT_URL || 'https://heartyourcity-bm66tqg04-perhapslaksh-5241s-projects.vercel.app/',
   credentials: true
 };
 
