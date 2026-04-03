@@ -7,7 +7,7 @@ const morgan = require('morgan');
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || 'https://city-heart.vercel.app', credentials: true }));
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
