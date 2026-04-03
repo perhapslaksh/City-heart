@@ -8,6 +8,7 @@ const morgan = require('morgan');
 const app = express();
 
 app.use(cors({ origin: true, credentials: true }));
+app.options('*', cors());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
