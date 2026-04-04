@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const app = express();
 
 app.use(cors({
-  origin: 'https://heartyourcity-kpyh995xh-perhapslaksh-5241s-projects.vercel.app',
+  origin: 'https://heartyourcity.vercel.app',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -15,7 +15,7 @@ app.use(cors({
 }));
 
 app.options('*', cors({
-  origin: 'https://heartyourcity-kpyh995xh-perhapslaksh-5241s-projects.vercel.app',
+  origin: 'https://heartyourcity.vercel.app',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
