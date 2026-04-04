@@ -25,11 +25,16 @@ export const useAuthStore = create((set) => ({
   },
 
   register: async (username, email, password, displayName) => {
+  try {
     const { data } = await api.post('/auth/register', { username, email, password, displayName });
     localStorage.setItem('ch_token', data.token);
     set({ user: data.user });
     return data.user;
-  },
+  } catch (error) {
+    console.error('Register error:', error.response?.data || error.message);
+    throw error;
+  }
+},
 
   logout: async () => {
     try { await api.post('/auth/logout'); } catch {}
